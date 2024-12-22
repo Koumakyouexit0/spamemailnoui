@@ -14,18 +14,9 @@ def clean():
     else:
         os.system('clear')
 
-def install_package(package_name):
-    """
-    Args:
-        package_name (str): yagmail
-    """
-    try:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", package_name])
-        print(f"Gói '{package_name}' đã được cài đặt thành công.")
-    except subprocess.CalledProcessError:
-        print(f"Có lỗi xảy ra khi cài đặt gói '{package_name}'.")
-    except Exception as e:
-        print(f"Lỗi không mong muốn: {e}")
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    install("yagmail")
 
 sender_email = input("Nhập email của bạn: ")
 password = getpass("Nhập mật khẩu của bạn: ")  
