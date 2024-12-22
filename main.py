@@ -1,5 +1,3 @@
-import yagmail
-from getpass import getpass
 import time  
 import subprocess
 import sys
@@ -17,6 +15,9 @@ def clean():
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
     install("yagmail")
+    
+import yagmail
+from getpass import getpass
 
 sender_email = input("Nhập email của bạn: ")
 password = getpass("Nhập mật khẩu của bạn: ")  
